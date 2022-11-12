@@ -1,0 +1,104 @@
+.footer-primary {
+  background-color: $brand-secondary;
+  color: $gray-tertiary;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  &-inner {
+    padding: 50px;
+    display: grid;
+    row-gap: 43px;
+    grid-template-areas:
+      'nav'
+      'contact'
+      'support';
+
+    // de citit swap-ul!!
+
+    @include media-breakpoint-up(lg) {
+      padding-left: 12px;
+      padding-right: 12px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas:
+        'nav nav'
+        'support contact';
+    }
+  }
+
+  // inversare mobile vs desktop
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 43px;
+    grid-area: nav;
+
+    @include media-breakpoint-up(lg) {
+      flex-wrap: nowrap;
+      column-gap: 110px;
+    }
+
+    ul {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include media-breakpoint-up(lg) {
+        flex-basis: auto;
+        gap: 4px;
+      }
+    }
+  }
+
+  .footer-contact {
+    grid-area: contact;
+
+    p:nth-child(1) {
+      font-size: 16px;
+    }
+
+    p span {
+      font-weight: 500;
+    }
+
+    p:nth-child(2) {
+      margin-top: 10px;
+    }
+
+    p:nth-child(2),
+    p:nth-child(3),
+    p:nth-child(4) {
+      text-transform: initial;
+    }
+
+    p:last-child {
+      color: $brand-primary;
+    }
+  }
+
+  .footer-support {
+    grid-area: support;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+
+    li {
+      text-align: center;
+    }
+
+    li:nth-child(2) {
+      margin: 0 33px;
+    }
+
+    i[class*='fa-solid'] {
+      color: $brand-primary;
+      display: block;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  }
+}

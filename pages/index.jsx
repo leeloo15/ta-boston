@@ -1,15 +1,24 @@
-import Image from "next/image";
+import Footer from '../components/common/footer/Footer';
+import Header from '../components/common/header/Header';
+import HomePayment from '../components/homepage/HomePayment';
 
 export default function Home() {
   return (
-    <div>hello boston <i className="fa-solid fa-house"></i>
-    <img src="/images/logo.jpg" alt="Alt" />
-    <button className="button button-primary">Button Primary</button>
-    <button className="button button-primary button-large">Button primary large</button>
+    <div>
+      <header className="header container mt-lg-5">
+        <Header></Header>
+      </header>
 
-    <a className="button button-primary">Button Primary</a>
-    <a className="button button-primary button-large">Button primary large</a>
+      <main className="content">
+        <div className="content-main container">
+          {/* container e greseala -vedem data viitoare */}
+          <HomePayment></HomePayment>
+        </div>
+      </main>
 
+      <footer className="footer">
+        <Footer></Footer>
+      </footer>
     </div>
   );
 }
